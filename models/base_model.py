@@ -15,3 +15,5 @@ class BaseModel:
     def __str__(self):
         name = type(self).__name__
         return "[{}] ({}) {}".format(name, self.id, self.__dict__)
+
+    def to_dict
