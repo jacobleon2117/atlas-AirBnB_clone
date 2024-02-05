@@ -40,7 +40,7 @@ class FileStorage:
             key = obj.__class__.name__ + "." + obj.id
             self.__objects[key] = obj
 
-    def save(self);
+    def save(self):
         """serialiezes __object to Json file"""
         json_objects = {}
         for key in self.__objects:

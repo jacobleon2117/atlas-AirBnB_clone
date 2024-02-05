@@ -18,7 +18,7 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key != "__class__":
                     setattr(self, key, value)
-            if kwargs.get("created_at", None) and type(self,created_at) is str:
+            if kwargs.get("created_at", None) and type(self.created_at) is str:
                 self.created_at = datetime.strptime(kwargs["created_at"], time)
             else:
                 self.created_at = datetime.utcnow()
@@ -46,6 +46,7 @@ def save(self):
 
 def to_dict(self, save_fs=None):
     """A dictionary containing all keys/values of the instance"""
+    new_dict = self.__dict__.copy()
     if "created_at" in new_dict:
         new_dict["created_at"] = new_dict["created_at"].strftime(time)
     if "updated_at" in new_dict:
