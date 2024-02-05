@@ -24,4 +24,4 @@ class BaseModel:
     def to_dict(self):
         """
         """
-        inst_dict = self.__dict__
+        inst_dict = self.__dict__.copy()
