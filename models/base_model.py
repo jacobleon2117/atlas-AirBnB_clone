@@ -12,9 +12,11 @@ class BaseModel:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
+    def save(self):
+        self.updated_at = datetime.utcnow
+
     def __str__(self):
         name = type(self).__name__
         return "[{}] ({}) {}".format(name, self.id, self.__dict__)
 
     def to_dict(self):
-        
