@@ -18,10 +18,15 @@ class BaseModel:
         self.updated_at = datetime.utcnow
 
     def __str__(self):
-        name = type(self).__name__
-        return "[{0}] ({1}) {2}".format(name, self.id, self.__dict__)
+        class_name = self.__class__.__name__
+        return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
 
     def to_dict(self):
         """
         """
         inst_dict = self.__dict__.copy()
+        inst_dict["__class__"] = self.__class__.__name__
+        inst_dict["created_at"] = self.created_at.isoformat()
+        inst_dict["updated_at"] = self.updated_at.isoformat()
+        return inst_dict
+    
