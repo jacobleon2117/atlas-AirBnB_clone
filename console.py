@@ -93,4 +93,4 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
             print(new_instance.id)
 
-   
+    
