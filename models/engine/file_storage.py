@@ -42,11 +42,11 @@ class FileStorage:
         """
         
         """
-        if os.path.isFile(FileStorage.__file_path):
+        if os.path.isfile(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
                 try:
                     obj_dict = json.load(file)
-                    for key, value in obj_dict.items():
+                    for key, values in obj_dict.items():
                         class_name, obj_id = key.split(".")
                         cls = eval(class_name)
                         instance = cls(**values)
