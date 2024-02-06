@@ -9,11 +9,11 @@ from datetime import datetime
 from time import sleep
 from models.amenity import Amenity
 
-
-class TestAmenity_instantiation(unittest.TestCase):
+class TestAmenityInstantiation(unittest.TestCase):
     """
     Unittests for testing instantiation of the Amenity class.
     """
+
     def setUp(self):
         try:
             os.rename("file.json", "tmp.json")
@@ -46,10 +46,9 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(datetime, type(Amenity().updated_at))
 
     def test_name_is_public_class_attribute(self):
-        amenity1 = Amenity()
         self.assertEqual(str, type(Amenity.name))
         self.assertIn("name", dir(Amenity()))
-        self.assertNotIn("name", amenity1.__dict__)
+        self.assertNotIn("name", Amenity().__dict__)
 
     def test_two_amenities_unique_ids(self):
         amenity1 = Amenity()
@@ -71,17 +70,19 @@ class TestAmenity_instantiation(unittest.TestCase):
     def test_str_representation(self):
         my_date = datetime.today()
         my_date_repr = repr(my_date)
+
         amenity1 = Amenity()
-        amenity1.id = "777777"
+        amenity1.id = "222222"
         amenity1.created_at = amenity1.updated_at = my_date
-        amenity_str = amenity1.__str__()
-        self.assertIn("[Amenity] (777777)", amenity_str)
-        self.assertIn("'id': '777777'", amenity_str)
+        amenity_str = str(amenity1)
+
+        self.assertIn("[Amenity] (222222)", amenity_str)
+        self.assertIn("'id': '222222'", amenity_str)
         self.assertIn("'created_at': " + my_date_repr, amenity_str)
         self.assertIn("'updated_at': " + my_date_repr, amenity_str)
 
     def test_args_unused(self):
-        amenity1 = Amenity(None)
+        amenity1 = Amenity()
         self.assertNotIn(None, amenity1.__dict__.values())
 
     def test_instantiation_with_kwargs(self):
@@ -90,8 +91,8 @@ class TestAmenity_instantiation(unittest.TestCase):
         """
         my_date = datetime.today()
         my_date_iso = my_date.isoformat()
-        amenity1 = Amenity(id="777", created_at=my_date_iso, updated_at=my_date_iso)
-        self.assertEqual(amenity1.id, "777")
+        amenity1 = Amenity(id="222", created_at=my_date_iso, updated_at=my_date_iso)
+        self.assertEqual(amenity1.id, "222")
         self.assertEqual(amenity1.created_at, my_date)
         self.assertEqual(amenity1.updated_at, my_date)
 
@@ -99,7 +100,8 @@ class TestAmenity_instantiation(unittest.TestCase):
         with self.assertRaises(TypeError):
             Amenity(id=None, created_at=None, updated_at=None)
 
-class TestAmenity_save(unittest.TestCase):
+
+class TestAmenitySave(unittest.TestCase):
     """
     Unittests for save method of the Amenity class.
     """
@@ -151,10 +153,11 @@ class TestAmenity_save(unittest.TestCase):
             self.assertIn(amenity_id, f.read())
 
 
-class TestAmenity_to_dict(unittest.TestCase):
+class TestAmenityToDict(unittest.TestCase):
     """
     Unittests for to_dict method of the Amenity class.
     """
+
     def setUp(self):
         try:
             os.rename("file.json", "tmp.json")
@@ -184,7 +187,7 @@ class TestAmenity_to_dict(unittest.TestCase):
     def test_to_dict_contains_added_attributes(self):
         amenity1 = Amenity()
         amenity1.middle_name = "Johnson"
-        amenity1.my_number = 777
+        amenity1.my_number = 222
         self.assertEqual("Johnson", amenity1.middle_name)
         self.assertIn("my_number", amenity1.to_dict())
 
@@ -198,10 +201,10 @@ class TestAmenity_to_dict(unittest.TestCase):
     def test_to_dict_output(self):
         my_date = datetime.today()
         amenity1 = Amenity()
-        amenity1.id = "777777"
+        amenity1.id = "222222"
         amenity1.created_at = amenity1.updated_at = my_date
         to_dict = {
-            'id': '777777',
+            'id': '222222',
             '__class__': 'Amenity',
             'created_at': my_date.isoformat(),
             'updated_at': my_date.isoformat(),

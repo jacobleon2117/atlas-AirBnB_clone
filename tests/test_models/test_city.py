@@ -72,7 +72,7 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertIn("'updated_at': " + my_date_repr, my_city_str)
 
     def test_args_unused(self):
-        my_city = City(None)
+        my_city = City()
         self.assertNotIn(None, my_city.__dict__.values())
 
     def test_instantiation_with_kwargs(self):

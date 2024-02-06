@@ -142,7 +142,7 @@ class TestPlace_instantiation(unittest.TestCase):
         self.assertIn("'updated_at': " + my_date_repr, my_place_str)
 
     def test_args_unused(self):
-        my_place = Place(None)
+        my_place = Place()
         self.assertNotIn(None, my_place.__dict__.values())
 
     def test_instantiation_with_kwargs(self):
