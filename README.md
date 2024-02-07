@@ -8,11 +8,11 @@ Console using CRUD to create, read, update, and delete.
 
 ## Commands 
 
-- `Create `: <i>"</i>
-- `User `: <i></i>
-- ` All `: <i></i>
-- ` Destroy `: <i></i>
-- ` Quit `: <i></i>
-- ` Show `: <i></i>
-- ` Update `: <i></i>
-- ` Help `: <i></i>
+- `Create `
+- `User `
+- ` All `
+- ` Destroy `
+- ` Quit `
+- ` Show `
+- ` Update `
+- ` Help `
