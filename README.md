@@ -8,7 +8,7 @@ Console using CRUD to create, read, update, and delete.
 
 ## Commands 
 
-- `Create `: <i>Create "Class Name"</i>
+- `Create `: <i>"</i>
 - `User `: <i></i>
 - ` All `: <i></i>
 - ` Destroy `: <i></i>
