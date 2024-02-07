@@ -45,7 +45,8 @@ class HBNBCommand(cmd.Cmd):
         """
         Validate if the class name is valid.
         """
-        if class_name not in self.valid_classes:
+        key = "{}.{}".format(class_name, instance_id)
+        if key not in storage.all():
             print("** Invalid class name. Valid classes are: {} **".format(", ".join(self.valid_classes)))
             return False
         return True
