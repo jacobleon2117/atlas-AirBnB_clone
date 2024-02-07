@@ -6,7 +6,7 @@ from models.base_model import BaseModel
 class User(BaseModel):
     """
     User class that inherits from BaseModel
-        
+
         Attributes:
             email (str): The user's email
             password (str): The user's password
@@ -18,6 +18,6 @@ class User(BaseModel):
     password = ""
     first_name = ""
     last_name = ""
-    
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
