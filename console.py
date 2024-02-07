@@ -129,7 +129,7 @@ class HBNBCommand(cmd.Cmd):
             class_name = arg.strip()
             if not self.validate_class(class_name):
                 return
-            objects = {k: v for k, v in objects.items() 
+            objects = {k: v for k, v in objects.items()
                        if k.startswith(class_name + ".")}
         for obj in objects.values():
             print(obj)
@@ -143,7 +143,7 @@ class HBNBCommand(cmd.Cmd):
         if not self.validate_class(class_name):
             return
 
-        count = sum(1 for obj in storage.all().values() 
+        count = sum(1 for obj in storage.all().values()
                     if obj.__class__.__name__ == class_name)
         print(count)
 
