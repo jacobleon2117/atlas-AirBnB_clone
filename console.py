@@ -13,6 +13,7 @@ from models.review import Review
 from models.state import State
 from models.city import City
 
+
 class HBNBCommand(cmd.Cmd):
     """
     HBNBCommand console class
@@ -47,16 +48,16 @@ class HBNBCommand(cmd.Cmd):
         """
         key = "{}.{}".format(class_name, instance_id)
         if key not in storage.all():
-            print("** Invalid class name. Valid classes are: {} **".format(", ".join(self.valid_classes)))
+            print("** Invalid class name. Valid classes are: {} **".format
+                  (", ".join(self.valid_classes)))
             return False
         return True
 
     def validate_instance(self, class_name, instance_id):
-        """
-        Validate if the instance exists.
-        """
+        """ Validate if the instance exists. """
         if class_name not in storage.all():
-            print("** No instance found for class '{}' and id '{}' **".format(class_name, instance_id))
+            print("** No instance found for class '{}' and id '{}' **".format
+                  (class_name, instance_id))
             return False
         return True
 
