@@ -129,7 +129,8 @@ class HBNBCommand(cmd.Cmd):
             class_name = arg.strip()
             if not self.validate_class(class_name):
                 return
-            objects = {k: v for k, v in objects.items() if k.startswith(class_name + ".")}
+            objects = {k: v for k, v in objects.items() 
+                       if k.startswith(class_name + ".")}
         for obj in objects.values():
             print(obj)
 
@@ -142,7 +143,8 @@ class HBNBCommand(cmd.Cmd):
         if not self.validate_class(class_name):
             return
 
-        count = sum(1 for obj in storage.all().values() if obj.__class__.__name__ == class_name)
+        count = sum(1 for obj in storage.all().values() 
+                    if obj.__class__.__name__ == class_name)
         print(count)
 
     def do_update(self, arg):
@@ -172,6 +174,7 @@ class HBNBCommand(cmd.Cmd):
         Default behavior for cmd module when input is invalid.
         """
         print("** Unknown command '{}' **".format(arg))
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
