@@ -17,7 +17,7 @@ Console using CRUD. ( create, read, update, and delete )
 - ` Update `: <i></i>
 - ` Help `: <i></i>
 
-## How to use the commands
+## How to use create, show, all, update, and destroy
 
 <img width="1603" alt="Screenshot 2024-02-07 at 10 03 48 AM" src="https://github.com/jacobleon2117/atlas-AirBnB_clone/assets/143765559/424fa36c-5059-4517-ae46-e703b0032987">
 
