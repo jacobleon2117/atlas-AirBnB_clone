@@ -4,7 +4,7 @@ AirBnB
 
 ## Description
 
-Console using CRUD to create, read, update, and delete.
+Console using CRUD. ( create, read, update, and delete )
 
 ## Commands 
 
