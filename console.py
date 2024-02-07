@@ -55,7 +55,8 @@ class HBNBCommand(cmd.Cmd):
         """
         Validate if the instance exists.
         """
-        if class_name not in storage.all():
+        key = "{}.{}".format(class_name, instance_id)
+        if key not in storage.all():
             print("** No instance found for class '{}' and id '{}' **".format(class_name, instance_id))
             return False
         return True
@@ -87,6 +88,7 @@ class HBNBCommand(cmd.Cmd):
         """
         commands = shlex.split(arg)
         if len(commands) != 2:
+            print(commands)
             print("** Usage: show <class_name> <id> **")
             return
 
