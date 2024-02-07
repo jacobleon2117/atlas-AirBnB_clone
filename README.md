@@ -25,7 +25,7 @@ Console using CRUD. ( create, read, update, and delete )
 
 <img width="1372" alt="Screenshot 2024-02-07 at 10 07 19 AM" src="https://github.com/jacobleon2117/atlas-AirBnB_clone/assets/143765559/f865ecc6-509f-467a-ba29-71d8da86971c">
 
-
+<img width="1367" alt="Screenshot 2024-02-07 at 10 08 24 AM" src="https://github.com/jacobleon2117/atlas-AirBnB_clone/assets/143765559/676b9d0a-5c07-470f-8f55-77a599e225e8">
 
 ## Clone this repo
 
