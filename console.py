@@ -152,11 +152,10 @@ class HBNBCommand(cmd.Cmd):
         Update an instance by adding or updating an attribute.
         Usage: update <class_name> <id> <attribute_name> "<attribute_value>"
         """
-        commands = shlex.split(arg)
+         commands = shlex.split(arg)
         if len(commands) < 4:
-            print("** Usage: update <class_name> <id> <attr_name> <attr_value> **")
+        print("** Usage: update <class_name> <id> <attr_name> <attr_value> **")
             return
-
         class_name, instance_id, attr_name = commands[:3]
         if not self.validate_class(class_name):
             return
