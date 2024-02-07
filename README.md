@@ -29,5 +29,4 @@ Console using CRUD. ( create, read, update, and delete )
 
 ## Clone this repo
 
-https://github.com/jacobleon2117/atlas-AirBnB_clone/tree/jacobs_branch
-
+https://github.com/jacobleon2117/atlas-AirBnB_clone
