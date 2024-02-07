@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for FilStorage unittest
+Module for FileStorage unittest
 """
 import os
 import json
